@@ -1,9 +1,17 @@
-/*
- * Welcome to your app's main JavaScript file!
- *
- * We recommend including the built version of this JavaScript file
- * (and its CSS file) in your base layout (base.html.twig).
- */
+import '../styles/app.css';
 
-// any CSS you import will output into a single css file (app.css in this case)
-import './styles/app.css';
+// Les imports des librairies
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+// Les imports de Bootstrap
+import '../styles/bootstrap.min.css';
+import './bootstrap.bundle.min.js';
+
+
+const App = () => {
+    return (<h1>Hello World</h1>);
+}
+
+const root = document.querySelector("#root"); // Récupère l'id, écrire comme en css 
+ReactDOM.render(<App />, root); // Récupérer le DOM et afficher notre composant react (app)
