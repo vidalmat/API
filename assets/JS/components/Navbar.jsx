@@ -1,5 +1,7 @@
 
 import React from 'react';
+
+// Permet de récupérer les props comme un composant route standart
 const  Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -41,7 +43,7 @@ const  Navbar = () => {
     );
 }
  
-export default Navbar;
+export default Navbar; // Si l'on veut exporter notre composant html ci-dessus, ne jamais oublier cette ligne
 
 
 
