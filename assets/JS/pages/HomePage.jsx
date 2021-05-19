@@ -1,7 +1,8 @@
 import React from 'react';
 
 const HomePage = () => {
-    return ( <div className="card text-center">
+    return ( 
+    <div className="card text-center">
     <div className="card-header">
         <h1>Mon super Blog React !</h1>
     </div>

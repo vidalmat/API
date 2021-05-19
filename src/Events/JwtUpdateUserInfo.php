@@ -16,6 +16,7 @@ class JwtUpdateUserInfo
         $data['firstname'] = $user->getFirstname();
         $data['lastname'] = $user->getLastname();
         $data['pseudo'] = $user->getPseudo();
+        $data['id'] = $user->getId();
         
         $event->setData($data);
     }
