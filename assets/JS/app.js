@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 
 // Les imports de Bootstrap
 import '../styles/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 import './bootstrap.bundle.min.js';
 
 // Les imports des composants ReactJs
@@ -20,6 +21,7 @@ import UserPage from './pages/UserPage';
 import NewPost from './pages/NewPost';
 import RegisterPage from './pages/RegisterPage';
 import OnePost from './pages/OnePost';
+import { toast, ToastContainer } from 'react-toastify';
 
 AuthAPI.setUp()
 
@@ -56,7 +58,7 @@ const App = (props) => {
                     <Route path="/" component={HomePage} replace/>
 
                 </Switch>
-
+            <ToastContainer position={ toast.POSITION.BOTTOM_CENTER }/>
         </HashRouter>   
     );
 }

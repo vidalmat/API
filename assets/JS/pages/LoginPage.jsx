@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import authAPI from '../services/authAPI';
 
 
@@ -25,11 +26,11 @@ const LoginPage = ({onLogin, history}) => {
             await authAPI.authenticate(credentials);
             setError("");
             onLogin(true);
-            // toast.sucess("Vous êtes connecté!!");
+            toast.warning("Vous êtes connecté!! 🤪");
             history.replace("/");
         }
         catch (error){
-
+            toast.success("Une erreur s'est produite!!! 👎");
             setError("Aucune adresse email ne correspond où alors les informations ne correspondent pas")
 
         }

@@ -3,9 +3,11 @@ import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import postsAPI from '../services/postsAPI';
+import PostsLoader from '../components/loader/PostLoader';
 
 const PostsPage = () => {
     const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState('');// ajoute une recherche sur le site 
     const handleSearch = ({ currentTarget }) => {         // variable pour créer la fonction pour le bloc recherche
         const value = currentTarget.value;
@@ -18,7 +20,8 @@ const PostsPage = () => {
     useEffect(async () => {
         try{ 
             await postsAPI.findAll()
-            .then(data => setPosts(data))
+                .then(data => setPosts(data))
+            setLoading(false);
 
         } catch (error){
             error => console.log(error.response);
@@ -61,6 +64,7 @@ const PostsPage = () => {
         )}
         </div>
     </div>
+    {loading && <PostsLoader/>}
     </>
   );
 }
