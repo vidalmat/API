@@ -1,6 +1,7 @@
 import axios from 'axios';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import postsAPI from '../services/postsAPI';
 
 const PostsPage = () => {
@@ -49,6 +50,11 @@ const PostsPage = () => {
                         <h3>{ post.author.pseudo }</h3>
                         <h4 className="card-title">Titre de l'article</h4>
                         <p className="card-text">Contenu de l'article{ post.content }</p>
+                    </div>
+                    <div className="d-flex justify-content-center">
+                        <Link type="button" className="btn btn-info mb-3" to={`/post/${post.id}`}
+                        >Voir le post</Link>
+
                     </div>
                     </div>
                 </div> 

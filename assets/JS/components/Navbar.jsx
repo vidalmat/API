@@ -31,7 +31,7 @@ const Navbar = ({isAuthenticated, onLogout, history}) => {
                         {(!isAuthenticated && ( <>
                             {/* Bouton connexion */}
                             <li className="nav-item">
-                                <NavLink to="#" className="nav-link">Inscription</NavLink>
+                                <NavLink to="/register" className="nav-link">Inscription</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink to="/login" className="btn btn-success">Connexion</NavLink>
@@ -42,7 +42,7 @@ const Navbar = ({isAuthenticated, onLogout, history}) => {
                                 <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestion compte</a>
                             <div className="dropdown-menu">
                                 <NavLink className="dropdown-item" to="/info/user">Mes informations</NavLink>
-                                <NavLink className="dropdown-item" to="#">Nouveau post</NavLink>
+                                <NavLink className="dropdown-item" to="/user/post/new">Nouveau post</NavLink>
                                 <div className="dropdown-divider"></div>
                                 <button type="button"className="dropdown-item" onClick={handleLogout}>Déconnexion</button>
                             </div>

@@ -17,10 +17,13 @@ import LoginPage from './pages/LoginPage';
 import AuthAPI from './services/authAPI';
 import PrivateRoute from './components/PrivateRoute';
 import UserPage from './pages/UserPage';
+import NewPost from './pages/NewPost';
+import RegisterPage from './pages/RegisterPage';
+import OnePost from './pages/OnePost';
 
 AuthAPI.setUp()
 
-const App = () => {
+const App = (props) => {
 
     const [isAuthenticated, setIsAuthenticated] = useState(AuthAPI.isAuthenticated());
 
@@ -34,14 +37,11 @@ const App = () => {
 
                 <Switch>
 
-                    {/* { <Route path="/login"
-                    render={(props) => <LoginPage onLogin={setIsAuthenticated} {...props} /> }replace/> } */}
-
-                    {/* <PrivateRoute path="/user/post/:id" setIsAuthenticated={setIsAuthenticated} component={NewPost} /> */}
+                    <PrivateRoute path="/user/post/:id" isAuthenticated={isAuthenticated} component={NewPost} />
 
                     <PrivateRoute path="/info/user" isAuthenticated={isAuthenticated} component={UserPage} />
 
-                    {/* <Route path="/post/:id" component={OnePost} {...props}/> */}
+                    <Route path="/post/:id" component={OnePost} {...props}/>
 
                     <Route path="/posts" component={PostsPage}/>
 
@@ -51,7 +51,7 @@ const App = () => {
                     replace
                     />
 
-                    {/* <Route path="/register" component={RegisterPage}/> */}
+                    <Route path="/register" component={RegisterPage}/>
 
                     <Route path="/" component={HomePage} replace/>
 

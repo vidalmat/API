@@ -15,7 +15,7 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
  * @ORM\Entity(repositoryClass=PostRepository::class)
  * @ApiResource(
  *      collectionOperations={"GET"={"path"="/allposts"},"POST"},
- *      itemOperations={"GET"={"path"="/post"},"PUT","DELETE"},
+ *      itemOperations={"GET"={"path"="/post/{id}"},"PUT","DELETE"},
  *      normalizationContext = {
  *          "groups"={"posts_read"}
  * },
